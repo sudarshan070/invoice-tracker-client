@@ -1,0 +1,43 @@
+.landing {
+  background: #f2f2f2;
+  padding: 3rem 0;
+  h2 {
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: 0.8rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: 0.3rem;
+  }
+  p {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+  }
+  .landing-img-left {
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+  .landing-img-right {
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+  .landing-left {
+    h2 {
+      font-size: 2rem;
+    }
+    .start-btn {
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+    }
+  }
+}
