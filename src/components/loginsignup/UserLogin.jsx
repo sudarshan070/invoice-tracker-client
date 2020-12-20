@@ -1,5 +1,6 @@
 import Axios from "axios";
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { BASE_URL } from "../../utils/api";
 import UserNavbar from "./UserNavbar";
 
@@ -17,12 +18,16 @@ export class UserLogin extends Component {
   };
 
   handleClick = () => {
-    console.log("Click is happened");
+    console.log(this.props, "handleClick");
     Axios.post(`${BASE_URL}/users/login`, {
       ...this.state,
     }).then((res) => {
-      localStorage.setItem("token", res.data.token);
-      this.props.history.push("/");
+      console.log(res, "res");
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        this.props.setIsLoggedIn(true);
+        this.props.history.push("/");
+      }
     });
   };
 
@@ -73,4 +78,4 @@ export class UserLogin extends Component {
   }
 }
 
-export default UserLogin;
+export default withRouter(UserLogin);
