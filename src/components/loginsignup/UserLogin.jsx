@@ -26,7 +26,7 @@ export class UserLogin extends Component {
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
         this.props.setIsLoggedIn(true);
-        this.props.history.push("/");
+        this.props.history.push("/user/dashboard");
       }
     });
   };

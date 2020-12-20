@@ -8,6 +8,8 @@ import AdminLogin from './components/loginsignup/AdminLogin'
 import AdminSignUp from './components/loginsignup/AdminSignUp'
 import Axios from 'axios'
 import { BASE_URL } from './utils/api'
+import UserDashboard from './components/invoices/UserDashboard'
+import CreateInvoice from './components/invoices/CreateInvoice'
 
 
 
@@ -15,12 +17,12 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userInfo, setUserInfo] = useState(null)
-  console.log(userInfo, 'userInfo');
+
 
   useEffect(() => {
     if (localStorage.token) {
-      Axios.get(`${BASE_URL}/users`, { headers: { "authorization": `Token ${localStorage.token}` } }).then(res => {
-        const user = res.data
+      Axios.get(`${BASE_URL}/users`, { headers: { authorization: localStorage.token } }).then(res => {
+        const user = res.data.user
         setUserInfo(user)
         setIsLoggedIn(true)
       }).catch(err => setIsLoggedIn(false))
@@ -29,6 +31,8 @@ function App() {
     }
   }, [isLoggedIn])
 
+
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false)
@@ -36,13 +40,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} userInfo={userInfo} />
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/user' render={() => <UserLogin setIsLoggedIn={setIsLoggedIn} />} />
         <Route exact path='/user/register' component={UserSignUp} />
         <Route exact path='/admin' component={AdminLogin} />
         <Route exact path='/admin/register' component={AdminSignUp} />
+        <Route exact path='/user/dashboard' component={UserDashboard} />
+        <Route exact path='/user/createinvoice' component={CreateInvoice} />
       </Switch>
     </BrowserRouter>
   );
