@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <div className="landing">
       <div className="container-xl">
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between media-flex">
           <div>
             <h2>Invoice Tracker</h2>
             <h4>Monitor your accounts receivable with this invoice tracker.</h4>
@@ -21,7 +21,7 @@ export default function Landing() {
         </div>
 
         <div className="d-flex align-items-center pt-4">
-          <div className="landing-img-right pr-5">
+          <div className="landing-img-right pr-5 d-media-none">
             <img src="/media/invoice1.png" alt="invoice1" />
           </div>
           <div className="landing-left pl-5">

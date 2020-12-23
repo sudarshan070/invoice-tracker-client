@@ -1,0 +1,28 @@
+@media only screen and (max-width: 760px) {
+  body {
+    font-size: 12px !important;
+  }
+  .d-media-none {
+    display: none !important;
+  }
+
+  .media-flex {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .landing-img-left {
+    width: 100% !important;
+    padding-top: 1.5rem;
+  }
+  .landing-left {
+    padding-left: 0 !important;
+  }
+
+  .outer-form-box {
+    width: 100%;
+  }
+  .p-0 {
+    padding: 0 !important;
+  }
+}

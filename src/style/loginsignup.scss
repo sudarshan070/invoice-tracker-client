@@ -9,9 +9,9 @@
   }
   .active {
     font-size: 18px;
-    color: #14bef0;
+    color: #157af6;
     font-weight: 500;
-    border-bottom: 3px solid #14bef0;
+    border-bottom: 3px solid #157af6;
     padding: 1rem;
   }
 }
@@ -28,16 +28,43 @@
   display: block;
   padding: 2rem 1.5rem;
   border: solid 1px rgba(216, 216, 216, 0.5);
-  border-radius: 4px;
   font-family: "Camphor";
   color: #787887;
+  border-radius: 0.6rem;
   .input {
     outline: none;
     height: 2.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p {
     margin-bottom: 1.25rem;
   }
   .label {
     padding-bottom: 0.5rem;
     font-size: 0.8rem;
   }
+}
+
+.update-input {
+  margin-bottom: 2rem;
+}
+
+.btn-cancel {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  margin-top: 1rem;
+  color: #000000;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  box-shadow: 0.5rem 0.5rem 0.5rem #dadada, -0.1rem -0.1rem 0.1rem #f3f3f3,
+    inset 1rem 1rem 1rem #e4e4e4;
+}
+
+.login-form {
+  margin-top: 1.8rem;
 }

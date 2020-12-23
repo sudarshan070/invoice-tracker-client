@@ -4,12 +4,12 @@ import Landing from './components/Landing'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import UserLogin from './components/loginsignup/UserLogin'
 import UserSignUp from './components/loginsignup/UserSignUp'
-import AdminLogin from './components/loginsignup/AdminLogin'
-import AdminSignUp from './components/loginsignup/AdminSignUp'
 import Axios from 'axios'
 import { BASE_URL } from './utils/api'
 import UserDashboard from './components/invoices/UserDashboard'
 import CreateInvoice from './components/invoices/CreateInvoice'
+import AdminDhashboard from './components/invoices/AdminDhashboard'
+import Update from './components/invoices/Update'
 
 
 
@@ -32,11 +32,11 @@ function App() {
   }, [isLoggedIn])
 
 
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false)
   }
+
 
   return (
     <BrowserRouter>
@@ -45,10 +45,10 @@ function App() {
         <Route exact path='/' component={Landing} />
         <Route exact path='/user' render={() => <UserLogin setIsLoggedIn={setIsLoggedIn} />} />
         <Route exact path='/user/register' component={UserSignUp} />
-        <Route exact path='/admin' component={AdminLogin} />
-        <Route exact path='/admin/register' component={AdminSignUp} />
         <Route exact path='/user/dashboard' component={UserDashboard} />
         <Route exact path='/user/createinvoice' component={CreateInvoice} />
+        <Route exact path='/admin/dashboard' component={AdminDhashboard} />
+        <Route exact path='/invoice/update/:id' component={Update} />
       </Switch>
     </BrowserRouter>
   );
